@@ -11,13 +11,14 @@ using System.Media;
 using System.Drawing.Text;
 namespace TestDePersonajes
 {
+
     public partial class Menu : Form
     {
         PrivateFontCollection fuentemenu = new PrivateFontCollection();
         public Menu()
         {
         InitializeComponent();
-            fuentemenu.AddFontFile("PoorRichardOpti.otf");
+            fuentemenu.AddFontFile("POORICH.ttf");
             Font menufont = new Font(fuentemenu.Families[0], 26.25f, FontStyle.Regular);
             label1.Font = menufont;
 
@@ -32,14 +33,22 @@ namespace TestDePersonajes
         {
             this.Close();
         }
-
+        SoundPlayer musicmenu = new SoundPlayer(@"Capital Cities - Kangaroo Court.wav");
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            string music1 = @"Capital-Cities-Kangaroo-Court.wav";
+            
             try
             {
-                SoundPlayer musicmenu = new SoundPlayer(music1);
-                musicmenu.Play();
+                CheckBox cb = (CheckBox)sender;
+                
+                if (cb.Checked) 
+                {
+                    musicmenu.PlayLooping();
+                }
+                else
+                {
+                    musicmenu.Stop();
+                }
            }
             catch (Exception er)
                 {
