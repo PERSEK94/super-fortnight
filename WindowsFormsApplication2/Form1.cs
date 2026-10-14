@@ -30,7 +30,7 @@ namespace WindowsFormsApplication2
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            string music1 = @"WindowsFormsApplication2\Resources\Audio";
+            string music1 = @"Capital-Cities-Kangaroo-Court.wav";
             try
             {
                 SoundPlayer musicmenu = new SoundPlayer(music1);
