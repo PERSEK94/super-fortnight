@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-
-namespace WindowsFormsApplication2
+using System.Drawing.Text;
+namespace TestDePersonajes
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        PrivateFontCollection fuentemenu = new PrivateFontCollection();
+        public Menu()
         {
-            InitializeComponent();
+        InitializeComponent();
+            fuentemenu.AddFontFile("PoorRichardOpti.otf");
+            Font menufont = new Font(fuentemenu.Families[0], 26.25f, FontStyle.Regular);
+            label1.Font = menufont;
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -40,6 +45,13 @@ namespace WindowsFormsApplication2
                 {
                     MessageBox.Show("Error " + er.Message, "no se escucha", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Preguntas ventanaPregunta = new Preguntas();
+            ventanaPregunta.Show();
+            this.Hide();
         }
     }
 }
