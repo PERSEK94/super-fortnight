@@ -4,10 +4,12 @@ public class PreguntasClase
 {
     public string Pregunta { get; set; }
     public string Personaje { get; set; }
-  
-	public PreguntasClase(string Pregunta, string Personaje)
+    public string RutaImagen { get; set; }
+
+	public PreguntasClase(string pregunta, string personaje, string rutaImagen)
 	{
-        Pregunta = texto;
-        Personaje = personaj;
+        Pregunta = pregunta;
+        Personaje = personaje;
+        RutaImagen = rutaImagen;
 	}
 }

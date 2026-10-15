@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class2.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,8 +60,15 @@
     <Compile Include="Preguntas.Designer.cs">
       <DependentUpon>Preguntas.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreguntasClase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultados.Designer.cs">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,13 +76,31 @@
       <DependentUpon>Preguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resultados.resx">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Assets\Oswald-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\RobotoCondensed-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Tuffy-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -98,6 +126,27 @@
     <Content Include="Assets\**\*.*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Bleach-anime.ico" />
+    <Content Include="Assets\Bleach-Soundtrack-Going-Home-_432hz_.wav" />
+    <Content Include="Assets\chadresultado.jpg" />
+    <Content Include="Assets\Happypeople.wav" />
+    <Content Include="Assets\ichigoresultado.jpg" />
+    <Content Include="Assets\konpachi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\orihimeresultado.jpg" />
+    <Content Include="Assets\soifonresultado.jpg" />
+    <Content Include="Assets\Three-Days-Grace-I-Hate-Everything-About-You-_HD_.wav" />
+    <Content Include="Assets\uryuresultado.jpg" />
+    <Content Include="Assets\yoruichiresultado.jpg" />
+    <None Include="Resources\g5hks5rd2y0f1.jpeg" />
+    <None Include="Resources\rukilaik.jpg" />
+    <None Include="Resources\Terreno_de_Entrenamiento_Colina_del_S_kyoku.jpg" />
+    <None Include="Resources\aizo.jpg" />
+    <None Include="Resources\lalal.jpg" />
+    <None Include="Resources\images1.jpg" />
+    <None Include="Resources\MV5BYWZhMzYwMTEtMzRiNi00ZTY4LTg3MDAtOGY2YjY4MzI4OTU3XkEyXkFqcGc%40._V1_.jpg" />
+    <None Include="Resources\e2bd50f06942e4da652658e9d8d42d37.jpg" />
     <None Include="Resources\images.jpg" />
   </ItemGroup>
 </Project>

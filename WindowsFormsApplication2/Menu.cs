@@ -18,12 +18,52 @@ namespace TestDePersonajes
         public Menu()
         {
         InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.Resize += new EventHandler(Menu_Resize);
+
             fuentemenu.AddFontFile("Assets\\PoorRichardOpti.otf");
-            Font menufont = new Font(fuentemenu.Families[0], 26.25f, FontStyle.Regular);
+            Font menufont = new Font(fuentemenu.Families[0], 22.25f, FontStyle.Regular);
             label1.Font = menufont;
 
         }
+        private void Menu_Resize(object sender, EventArgs e)
+        {
+            int anchoForm = this.ClientSize.Width;
+            int altoForm = this.ClientSize.Height;
+            if (label1 != null)
+            {
+                label1.AutoSize = false;
 
+                label1.Width = anchoForm;
+                label1.Left = 0;
+                label1.Top = 30; 
+
+                label1.Height = 80;
+
+                label1.TextAlign = ContentAlignment.MiddleCenter;
+
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    label1.Font = new Font(label1.Font.Name, 34f, FontStyle.Bold);
+                }
+                else
+                {
+                    label1.Font = new Font(label1.Font.Name, 22f, FontStyle.Bold);
+                    label1.Height = 50; 
+                }
+            }
+            button1.Left = (anchoForm / 2) - button1.Width - 20;
+            button1.Top = (altoForm - button1.Height) / 2;
+
+            button2.Left = (anchoForm / 2) + 20;
+            button2.Top = (altoForm - button2.Height) / 2;
+
+            if (checkBox1 != null)
+            {
+                checkBox1.Left = anchoForm - checkBox1.Width - 30;
+                checkBox1.Top = altoForm - checkBox1.Height - 30;
+            }
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -33,7 +73,7 @@ namespace TestDePersonajes
         {
             this.Close();
         }
-        SoundPlayer musicmenu = new SoundPlayer(@"Assets\\Capital-Cities-Kangaroo-Court.wav");
+        SoundPlayer musicmenu = new SoundPlayer(@"Assets\\Happypeople.wav");
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             
