@@ -18,7 +18,7 @@ namespace TestDePersonajes
         public Menu()
         {
         InitializeComponent();
-            fuentemenu.AddFontFile("POORICH.ttf");
+            fuentemenu.AddFontFile("Assets\\PoorRichardOpti.otf");
             Font menufont = new Font(fuentemenu.Families[0], 26.25f, FontStyle.Regular);
             label1.Font = menufont;
 
@@ -33,7 +33,7 @@ namespace TestDePersonajes
         {
             this.Close();
         }
-        SoundPlayer musicmenu = new SoundPlayer(@"Capital Cities - Kangaroo Court.wav");
+        SoundPlayer musicmenu = new SoundPlayer(@"Assets\\Capital-Cities-Kangaroo-Court.wav");
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             
