@@ -47,6 +47,7 @@ namespace TestDePersonajes
             new PreguntasClase("¿Cuando alguien se gana tu confianza o admiración, sos capaz de seguir esa lealtad hasta el final?", "Soi Fon", "Soi Fon.jpg")
         };
         int preguntaActual = 0;
+
         public Preguntas()
         {
             InitializeComponent();
@@ -55,6 +56,7 @@ namespace TestDePersonajes
             this.Resize += new EventHandler(Preguntas_Resize);
             MostrarPreguntaActual();
         }
+        // inicio ajuste de ventana
         private void Preguntas_Resize(object sender, EventArgs e)
         {
             int anchoVentana = this.ClientSize.Width;
@@ -113,6 +115,7 @@ namespace TestDePersonajes
                 }
             }
         }
+        // fin ajuste de ventana
         private void MostrarPreguntaActual()
         {
             if (preguntaActual < listaPreguntas.Count)
@@ -142,7 +145,7 @@ namespace TestDePersonajes
 
             string personajeGanador = "";
 
-            if ((puntajeMaximo - puntajeMinimo) <= 4)
+            if (puntajeMaximo == 24 || puntajeMaximo == -24 || puntajeMaximo == puntajeMinimo)
             {
                 personajeGanador = "Kon";
             }
@@ -165,27 +168,27 @@ namespace TestDePersonajes
             preguntaActual++;
             MostrarPreguntaActual();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // boton Si
         {
             RegistrarRespuesta(2);
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            RegistrarRespuesta(1);
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RegistrarRespuesta(0);
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            RegistrarRespuesta(-1);
-        }
-        private void button5_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // boton No
         {
             RegistrarRespuesta(-2);
         }
-        private void Preguntas_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // boton No se
+        {
+            RegistrarRespuesta(0);
+        }
+        private void button4_Click(object sender, EventArgs e) // boton Quiza Si
+        {
+            RegistrarRespuesta(1);
+        }
+        private void button5_Click(object sender, EventArgs e) // Boton Quiza No
+        {
+            RegistrarRespuesta(-1);
+        }
+        private void Preguntas_Load(object sender, EventArgs e) // Ajuste de ventana al cargar (alias ajustes extra de ventana)
         {
             this.Size = new Size(950, 650);
             this.StartPosition = FormStartPosition.CenterScreen;
