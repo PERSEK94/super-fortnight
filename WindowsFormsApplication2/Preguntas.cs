@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication2;
 
+
 namespace TestDePersonajes
 {
     public partial class Preguntas : Form
     {
+        System.Windows.Forms.Timer relojCongelar = new System.Windows.Forms.Timer();
         System.Drawing.Text.PrivateFontCollection fuentesPreguntas = new System.Drawing.Text.PrivateFontCollection();
+        
         Dictionary<string, int> puntajes = new Dictionary<string, int>()
     {
         // BLEACH
@@ -25,6 +28,7 @@ namespace TestDePersonajes
         { "Yasutora 'Chad' Sado", 0 },
         { "Soi Fon", 0 }
     };
+        // diccionario de puntajes para cada personaje
         List<PreguntasClase> listaPreguntas = new List<PreguntasClase>()
         {
             // Ichigo Kurosaki
@@ -46,14 +50,23 @@ namespace TestDePersonajes
             new PreguntasClase("¿Te considerás alguien muy disciplinado, reservado y que se toma sus responsabilidades con total seriedad?", "Soi Fon", "soifonsita.jpg"),
             new PreguntasClase("¿Cuando alguien se gana tu confianza o admiración, sos capaz de seguir esa lealtad hasta el final?", "Soi Fon", "Soi Fon.jpg")
         };
+        // diccionario de puntajes para cada personaje y lista de preguntas con sus respectivas respuestas y rutas de imagen
         int preguntaActual = 0;
 
         public Preguntas()
         {
             InitializeComponent();
+            // fuentes
             fuentesPreguntas.AddFontFile("Assets\\Oswald-Regular.ttf");
             this.Load += new EventHandler(Preguntas_Load);
             this.Resize += new EventHandler(Preguntas_Resize);
+            //fuentes
+
+            // delay botones
+            relojCongelar.Interval = 1500;
+            relojCongelar.Tick += new EventHandler(RelojCongelar_Tick);
+            // delay botones
+
             MostrarPreguntaActual();
         }
         // inicio ajuste de ventana
@@ -116,8 +129,29 @@ namespace TestDePersonajes
             }
         }
         // fin ajuste de ventana
+
+        // inicio delay botones
+        private void CongelarInterfaz()
+        {
+            if (panel1 != null)
+            {
+                panel1.Enabled = false;
+            }
+            relojCongelar.Start();
+        }
+
+        private void RelojCongelar_Tick(object sender, EventArgs e)
+        {
+            relojCongelar.Stop(); 
+            if (panel1 != null)
+            {
+                panel1.Enabled = true;
+            }
+        }
+        // fin delay botones
         private void MostrarPreguntaActual()
         {
+            CongelarInterfaz();
             if (preguntaActual < listaPreguntas.Count)
             {
                 label1.Text = listaPreguntas[preguntaActual].Pregunta;
@@ -194,6 +228,11 @@ namespace TestDePersonajes
             this.StartPosition = FormStartPosition.CenterScreen;
 
             Preguntas_Resize(this, EventArgs.Empty);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

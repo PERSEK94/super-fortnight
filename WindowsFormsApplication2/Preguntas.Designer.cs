@@ -37,6 +37,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +106,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button3);
@@ -124,6 +126,20 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.MV5BYWZhMzYwMTEtMzRiNi00ZTY4LTg3MDAtOGY2YjY4MzI4OTU3XkEyXkFqcGc___V1_;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.button6.ForeColor = System.Drawing.Color.Crimson;
+            this.button6.Location = new System.Drawing.Point(677, 104);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(122, 122);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "SALIR";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Preguntas
             // 
@@ -156,6 +172,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button6;
     }
 }
 
